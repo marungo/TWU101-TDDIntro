@@ -1,24 +1,40 @@
 package com.thoughtworks.tddintro.exercises.accountbalance;
 
-import org.junit.Ignore;
 import org.junit.Test;
+
+import static org.hamcrest.CoreMatchers.is;
+import static org.junit.Assert.assertThat;
 
 public class AccountTests {
     @Test
-    @Ignore  // Remove each @Ignore and implement test
+    // Remove each @Ignore and implement test
     public void shouldIncreaseMyBalanceWhenIDepositMoney(){
         Account account = new Account();
+        account.deposit(10);
+        account.deposit(10);
+
+        Integer result = account.getBalance();
+        assertThat(result, is(20));
     }
 
     @Test
-    @Ignore  // Remove each @Ignore and implement test
     public void shouldDecreaseMyBalanceWhenIWithdrawMoney(){
+        Account account = new Account();
+        account.deposit(50);
+        account.withdraw(10);
+        account.withdraw(10);
 
+        Integer result = account.getBalance();
+        assertThat(result, is(30));
     }
 
     @Test
-    @Ignore  // Remove each @Ignore and implement test
     public void shouldNotDecreaseMyBalanceWhenIWithdrawMoneyAndDoNotHaveEnoughToCoverTheWithdrawal(){
+        Account account = new Account();
+        account.deposit(10);
+        account.withdraw(40);
 
+        Integer result = account.getBalance();
+        assertThat(result, is(10));
     }
 }
