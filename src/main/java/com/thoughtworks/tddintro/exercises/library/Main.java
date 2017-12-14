@@ -1,6 +1,7 @@
 package com.thoughtworks.tddintro.exercises.library;
 
 import java.io.BufferedReader;
+import java.io.ByteArrayOutputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;

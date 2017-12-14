@@ -10,6 +10,7 @@ public class Library {
     private PrintStream printStream;
     private BufferedReader bufferedReader;
 
+
     public Library(List<String> books, PrintStream printStream, BufferedReader bufferedReader) {
         this.books = books;
         this.printStream = printStream;
@@ -17,11 +18,13 @@ public class Library {
     }
 
     public void listBooks() {
-        String bookList = "";
-        for (String book : books) {
-            bookList += book + "\n";
+        if (books.size() > 0) {
+            String bookList = "";
+            for (String book : books) {
+                bookList += book + "\n";
+            }
+            printStream.println(bookList);
         }
-        printStream.println(bookList);
     }
 
     public void enterBook() {

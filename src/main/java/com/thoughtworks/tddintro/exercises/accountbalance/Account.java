@@ -11,6 +11,10 @@ public class Account {
         return balance;
     }
 
+    public void setBalance(int n) {
+        balance = n;
+    }
+
     public void deposit(int n) {
         balance += n;
     }
